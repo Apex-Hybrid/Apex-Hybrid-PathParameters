@@ -2,6 +2,8 @@
 
 import io.javalin.Javalin;
 
+
+
 public class JavalinSingleton {
     /**
      * Assignment: retrieve the variable "first" from the path parameter and send it in the response body. Produce
@@ -17,10 +19,13 @@ public class JavalinSingleton {
         Javalin app = Javalin.create();
 
         app.get("/firstname/{first}", ctx -> {
-            
+            String firstname = ctx.pathParam("first");
+            ctx.result(firstname);
             //write code here
-
         });
+
+
+        
 
         return app;
     }
